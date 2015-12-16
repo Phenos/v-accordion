@@ -13,7 +13,8 @@ function vPaneHeaderDirective () {
     template: '<div ng-transclude></div>',
     scope: {},
     link: function (scope, iElement, iAttrs, ctrls) {
-      iAttrs.$set('role', 'tab');
+      iAttrs.$set('role', 'link');
+      iAttrs.$set('aria-haspopup', 'true');
 
       var paneCtrl = ctrls[0],
           accordionCtrl = ctrls[1];

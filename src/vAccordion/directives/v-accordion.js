@@ -20,7 +20,7 @@ function vAccordionDirective ($timeout) {
     link: function (scope, iElement, iAttrs, ctrl, transclude) {
       transclude(scope.$parent.$new(), function (clone, transclusionScope) {
         transclusionScope.$accordion = scope.internalControl;
-        iElement.append(clone);
+        iElement.empty().append(clone);
       });
 
       var protectedApiMethods = ['toggle', 'expand', 'collapse', 'expandAll', 'collapseAll', 'hasExpandedPane'];
@@ -37,10 +37,10 @@ function vAccordionDirective ($timeout) {
         scope.allowMultiple = angular.isDefined(iAttrs.multiple);
       }
 
-      iAttrs.$set('role', 'tablist');
+      //iAttrs.$set('role', 'tablist');
 
       if (scope.allowMultiple) {
-        iAttrs.$set('aria-multiselectable', 'true');
+        //iAttrs.$set('aria-multiselectable', 'true');
       }
 
       if (angular.isDefined(scope.control)) {
@@ -169,7 +169,7 @@ function AccordionDirectiveController ($scope) {
         }
 
         var paneToFocus = $scope.panes[paneToFocusIndex];
-            paneToFocus.paneElement.find('v-pane-header')[0].focus();
+        //paneToFocus.paneElement.find('v-pane-header')[0].focus();
 
         break;
       }
@@ -190,7 +190,7 @@ function AccordionDirectiveController ($scope) {
         }
 
         var paneToFocus = $scope.panes[paneToFocusIndex];
-            paneToFocus.paneElement.find('v-pane-header')[0].focus();
+        //paneToFocus.paneElement.find('v-pane-header')[0].focus();
 
         break;
       }

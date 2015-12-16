@@ -70,8 +70,12 @@ function vPaneDirective ($timeout, $animate, accordionConfig) {
 
         paneContent[0].style.maxHeight = '0px';
         paneHeader.attr({
-          'aria-selected': 'true',
+          //'aria-selected': 'true',
           'tabindex': '0'
+        });
+        paneContent.attr({
+          'aria-hidden': false,
+          'aria-expanded': true
         });
 
         emitEvent('onExpand');
@@ -95,8 +99,12 @@ function vPaneDirective ($timeout, $animate, accordionConfig) {
 
         paneContent[0].style.maxHeight = paneInner[0].offsetHeight + 'px';
         paneHeader.attr({
-          'aria-selected': 'false',
-          'tabindex': '-1'
+          //'aria-selected': 'false',
+          'tabindex': '0'
+        });
+        paneContent.attr({
+          'aria-hidden': true,
+          'aria-expanded': false
         });
 
         emitEvent('onCollapse');
@@ -119,15 +127,15 @@ function vPaneDirective ($timeout, $animate, accordionConfig) {
         paneContent[0].style.maxHeight = 'none';
 
         paneHeader.attr({
-          'aria-selected': 'true',
+          //'aria-selected': 'true',
           'tabindex': '0'
         });
       } else {
         paneContent[0].style.maxHeight = '0px';
 
         paneHeader.attr({
-          'aria-selected': 'false',
-          'tabindex': '-1'
+          //'aria-selected': 'false',
+          'tabindex': '0'
         });
       }
 

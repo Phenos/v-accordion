@@ -13,7 +13,7 @@ function vPaneContentDirective () {
     template: '<div ng-transclude></div>',
     scope: {},
     link: function (scope, iElement, iAttrs) {
-      iAttrs.$set('role', 'tabpanel');
+      //iAttrs.$set('role', 'tabpanel');
     }
   };
 }
